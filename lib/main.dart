@@ -11,24 +11,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.green[100],
-        body: const TodoList(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showPopup(context);
-            // print(context);
-          },
-          backgroundColor: Colors.green[500],
-          child: const Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: HomePage());
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.green[100],
+      body: const TodoList(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showPopup(context);
+          // print(context);
+        },
+        backgroundColor: Colors.green[500],
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
         ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
